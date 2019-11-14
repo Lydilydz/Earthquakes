@@ -84,13 +84,18 @@
 			style="background-image: url(https://i1.wp.com/www.dailycal.org/assets/uploads/2019/09/coloredited_alexanderhong_earthquake_editorial.png?ssl=1&w=900) ; background-size: 100%;">
 			<h1>Earthquake News</h1>
 			<!-- Kicks off scrape -->
-
+			<p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
 		</div>
 		<h3 style="color: red;">Latest Earthquake News</h3>
-
+		<p><span style="font-weight:bold">{{ trek.news_title }}</span></p>
+		<p>{{ trek.news_p }}</p>
 		<div class="row">
 			<div class="col-xs-8 col-md-8">
-
+				<h3>Image: {{ trek.featured_img_title }}</h3>
+				<img src="{{ trek.featured_image_url | default('static/images/error.png')}}" style="width:100%"
+					class="img-responsive" style="padding-right: 20px; padding left: 20px;" alt="featured_image"><br />
+				<!-- <a href="{{ trek.featured_image_url}}">{{ trek.featured_image_url}}</a>
+				<p> {{ trek.featured_image_url}} </p> -->
 			</div>
 			<div class="col-xs-4 col-md-4">
 				<div class="col-xs-auto col-md-auto"
@@ -98,7 +103,7 @@
 						style="width:auto">
 
 						<h3>TBD Scraped Earthquake Data</h3>
-
+						<!-- <p> {{ trek.mars_weather }} </p> -->
 					</span>
 				</div>
 				<div class="col-xs-auto col-md-auto">
@@ -115,7 +120,7 @@
 							padding: 5px;
 						}
 					</style><span width="100%">
-		
+						<!-- {{ trek.html_table | safe}} -->
 					</span>
 				</div>
 			</div>
