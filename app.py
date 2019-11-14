@@ -13,8 +13,8 @@ def home():
 def aboutr():
     return render_template("about.html")
 
-@app.route("/vis1")
-def news1():
+@app.route("/visr1")
+def vis1():
     return render_template("vis1.html")
 
 @app.route("/news2r")
