@@ -13,9 +13,9 @@ def home():
 def aboutr():
     return render_template("about.html")
 
-@app.route("/visr1")
-def vis1():
-    return render_template("vis1.html")
+@app.route("/news1")
+def news1():
+    return render_template("news1.html")
 
 @app.route("/news2r")
 def news2r():
