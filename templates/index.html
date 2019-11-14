@@ -1,0 +1,152 @@
+<html>
+
+<head>
+    <link
+        href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic'
+        rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Data Lake Final Project</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="head">
+        <div class="headerobjectswrapper">
+            <div class="weatherforcastbox"><span style="font-style: italic;">Weatherforcast for the next 24 hours: Cold
+                    Cold Winter</span><br><span>Wind: 7km/h SSE; Ther: 21°C; Hum: 82%</span></div>
+            <header>Data Lake <br>times </header>
+        </div>
+
+        <div class="subhead">Arlington, VA - Thursday November 30, 2019 - Seven Pages
+            <nav>
+                <div>
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a style="color:	black; font: 28px ; " class="navbar-brand"
+                            href="/">Earthquakes</a>
+                    </div>
+                    <!-- Add a logo -->
+                    <!-- Trying to cneter logo not working -->
+                    <div class="topnav-centered">
+                        <!-- <a class="Logo" href="/" class="active">
+                            <img src="/static/Logo1.png" class="logo" width="100" height="50" alt="centered image"
+                                class="active">
+                        </a> -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav background-color= #">
+                                <li class="dropdown" style="color:	white; font: 20px ; ">
+
+                                </li>
+                                <!--  -->
+                                <li> <a href="{{ url_for('news1') }}">Earthquake
+                                        News</a></li>
+                                <li> <a href="{{ url_for('aboutr') }}">About</a>
+                                </li>
+                                <li><a href="{{ url_for('data1') }}">Earthquake
+                                        Data</a></li>
+                                <li> <a href="{{ url_for('maps1') }}">Earthquake
+                                        Map</a></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+            </nav>
+        </div>
+    </div>
+    <div class="content">
+        <div class="collumns">
+            <div class="collumn">
+                <div class="head"><span class="headline hl3">The Myths behind Earthquakes</span>
+                    <p><span class="headline hl4">by fill in blank here</span></p>
+                </div>
+                so epic story about earthquakes and myths!
+                <a href="http://uraha.de/de/?p=390&lang=en">
+                    <img src="https://www.bgs.ac.uk/discoveringGeology/hazards/earthquakes/images/restlessGods.jpg"
+                        alt="Pictures of Earthquakes" width="160" height="343"></a>
+                </p>
+            </div>
+            <div class="collumn">
+                <div class="head"><span class="headline hl5">Give people courage</span>
+                    <p><span class="headline hl6">What to do in the case of an emergency</span></p>
+                </div>
+                Steps to take in the event of an earthquake
+                <!-- <a href="https://www.dummies.com/education/science/what-are-earthquakes/"><img
+                        src="/static/Photos/EQexplained.jpg" alt="Earthquake Data Visualizations" width="160"
+                        height="343"></a>-->
+                    </p> 
+                <figure class="figure">
+                        <a href="https://www.dummies.com/education/science/what-are-earthquakes/"><img
+                            src="/static/Photos/EQexplained.jpg" alt="Earthquake Data Visualizations" width="160"
+                            height="343"></a>
+
+								<!-- <img class="media" href="https://www.dummies.com/education/science/what-are-earthquakes/" alt=""> -->
+								<!-- <figcaption class="figcaption">Hermine hoping for courage.</figcaption> -->
+						</figure>
+
+                <p>a brief write up of what to do in case of an earthquake.</p>
+
+                <p>Then more protocalls.</p>
+
+            </div>
+            <div class="collumn">
+                <div class="head"><span class="headline hl1">May the Force be with you</span>
+                    <p><span class="headline hl2">Let go your conscious self and act on instinct</span></p>
+                </div>Partially,
+                <a href="https://www.ready.gov/earthquakes"><img
+                        src="https://img.volcanodiscovery.com/maps/earthquakes-latest.jpg" alt="Earthquake Data "
+                        width="170" height="343"></a>
+                </p>
+                <!-- <figure class="figure">
+								<img class="media" src="http://i.giphy.com/4fDWVPMoSyhgc.gif" alt="">
+								<figcaption class="figcaption">"This time, let go your conscious self and act on instinct."</figcaption>
+						</figure> -->
+                <p>Leave room to talk about <span class="citation">"Don't under&shy;estimate the Force. I suggest you
+                        try it again, Luke."</span> Let's blow this thing and go home!</p>
+                <p>You don't believe in the Force, do you? As you wish.
+
+                </p>
+            </div>
+            <div class="collumn">
+                <div class="head"><span class="headline hl3">The buzz of the little world </span>
+                    <p><span class="headline hl4">Earthquakes explained</span></p>
+                </div>
+                <p>
+                    <a href="https://www.dummies.com/education/science/what-are-earthquakes/"><img
+                            src="/static/Photos/EQexplained.jpg" alt="Earthquake Data Visualizations" width="170"
+                            height="343"></a>
+
+                    I should be incapable of drawing a single stroke at the present moment; esence of the Almighty, who
+                    formed us in his own image, and the breath</p>
+            </div>
+            <div class="collumn">
+                <div class="head"><span class="headline hl1">It wasn't a dream </span>
+                    <p><span class="headline hl4">by FRANZ KAFKA</span></p>
+                </div>
+                <p>One morning, .
+                    <a
+                        href="https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/earthquake.html"><img
+                            src="https://www.trbimg.com/img-573cd237/turbine/la-1463603886-snap-photo/2000"
+                            alt="Earthquake News" width="100%" height="40%"></a> </p>
+
+                <p>His </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</html>

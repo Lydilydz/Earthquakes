@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Earthquake Dashboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a class="navbar-brand" href="/">Earthquakes</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Earthquake News<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+				<li><a href="{{ url_for('news1') }}">Earthquakes News Scrape</a></li>
+				<li><a href="{{ url_for('news2r') }}">Earthquakes Two</a></li>
+				<li><a href="{{ url_for('news3r') }}">Earthquake News in South America</a></li>
+				<li><a href="{{ url_for('news4r') }}">Earthquake News Worldwide</a></li>
+				<!-- <li><a href="News5.html">Earthquake Test Bed</a></li>  -->
+            </ul>
+          </li>
+          <li><a href="{{ url_for('maps1') }}">Earthquake Map</a></li>
+          <li><a href="{{ url_for('pics1') }}">Earthquake Pictures</a></li>
+          <li><a href="{{ url_for('data1') }}">Earthquake Data</a></li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+
+  <!-- Creates the Overall Grid -->
+
+
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </html>

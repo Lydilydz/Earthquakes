@@ -1,0 +1,161 @@
+/* Nav bar */
+
+/* Add a black background color to the top navigation */
+
+  
+  /* Style the links inside the navigation bar */
+ 
+  
+  /* Change the color of links on hover */
+ 
+  
+  /* Add an active class to highlight the current page */
+  
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  /* .topnav .icon {
+    display: none;
+  } */
+
+
+
+  /* Container needed to position the overlay. Adjust the width as needed */
+.container {
+    position: relative;
+    width: 50%;
+  }
+  
+  /* Make the image to responsive */
+  .image {
+    width:auto;
+    height: auto;
+  }
+  
+  /* The overlay effect (full height and width) - lays on top of the container and over the image */
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:none;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    transition: .5s ease;
+  }
+  
+ 
+  
+  /* Some text inside the overlay, which is positioned in the middle vertically and horizontally */
+  /* .text {
+    color: black;
+    font: verlag-book, san-serif;
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  } */
+
+
+
+  /* _____________-------------------------------------------------------------------________________________ */
+  /* About page img */
+  /* Three columns side by side */
+.column {
+  float: left;
+  width: 27%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+  .column {
+    width: 10075%;
+    display: block;
+  }
+}
+
+/* Add some shadows to create a card effect */
+.card {
+  box-shadow: 0 4px 8px 0 #e4ebee(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.container {
+  padding: 0 16px;
+}
+
+/* Clear floats */
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: whitesmoke;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #e4ebee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* end of abouts page */
+
+/* Home Page Grid  */
+
+.row_hp {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column_hp {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column_hp img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column_hp {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column_hp {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
