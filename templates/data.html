@@ -18,12 +18,12 @@
   <link
     href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic'
     rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="/static/css/style.css">
+  <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
   <title>Data Lake Final Project</title>
   <meta name="viewport" content="width=device-width">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
 </head>
 
@@ -43,7 +43,7 @@
     <div class="headerobjectswrapper">
       <div class="weatherforcastbox"><span style="font-style: italic;">Weatherforcast for the next 24 hours: Ice
           Cold Winter</span><br><span>Wind: 17km/h SSE; Ther: 21°C; Hum: 15%</span></div>
-      <header>Earthquakes <br> Data</header>
+      <header>Earthquakes <br> Predictions</header>
     </div>
 
     <div class="subhead">Arlington, VA - Wednesday November 20th, 2019 - Seven Pages
@@ -60,8 +60,7 @@
             </button>
             <a style="color:	black; font: 28px ; " class="navbar-brand" href="/">Earthquakes</a>
           </div>
-          <!-- Add a logo -->
-          <!-- Trying to cneter logo not working -->
+         
           <div class="topnav-centered">
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="align-items: center;">
@@ -73,7 +72,7 @@
                 <li> <a href="{{ url_for('aboutr') }}">About</a>
                 </li>
                 <li><a href="{{ url_for('data1') }}">Earthquake
-                    Data</a></li>
+                    Predictions</a></li>
                 <li> <a href="{{ url_for('maps1') }}">Earthquake
                     Map</a></li>
 
@@ -90,77 +89,54 @@
 <body>       
        <!-- Creates the Overall Grid -->
   <div class="container">
+    <!-- <h1>Earthquake Data Predictions</h1> -->
 
-    <h1>Earthquake Data Filtering</h1>
-    <!-- <p>What's the frequency, Kenneth? The Truth is Out There</p> -->
+    <!-- Predictions test layout-->
   </div>
-  <div class="container">
-    <div class="row margin-top-50">
-      <div class="col-md-2">
-        <aside class="filters">
-          <div class="panel panel-default">
-            <div class="panel-heading">Filter Search</div>
-            <div class="panel-body">
-              <form>
-                <div class="form-group">
-                  <ul class="list-group" id="filters">
-                    <li class="filter list-group-item">
-                      <label for="DateTime">Enter a Date</label>
-                      <input class="form-control" id="DateTime" type="text" placeholder="ex: 1/11/2011">
-                    </li>
-                    <li class="filter list-group-item">
-                      <label for="EventID">Enter an Event ID</label>
-                      <input class="form-control" id="EventID" type="text" placeholder="ex: 1970010640.0">
-                    </li>
-                    <li class="filter list-group-item">
-                      <label for="Depth">Enter a Depth</label>
-                      <input class="form-control" id="Depth" type="text" placeholder="ex: 80.0">
-                    </li>
-                    <li class="filter list-group-item">
-                      <label for="Magnitude">Enter a Magnitude</label>
-                      <input class="form-control" id="Magnitude" type="text" placeholder="ex: 6.1">
-                    </li>
-                    <li class="filter list-group-item">
-                      <label for="NbStations">Enter a NB Station</label>
-                      <input class="form-control" id="NbStations" type="text" placeholder="ex: 199">
-                    </li>
-                  </ul>
-                </div>
-                <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
-                <button id="reset-btn" type="button" class="btn btn-default" onclick="window.location.reload()">Reset
-                  Table</button>
-
-              </form>
-            </div>
-          </div>
-        </aside>
-      </div>
-      <div class="col-md-10">
-        <div id="table-area" class="">
-          <table id="ufo-table" class="table table-striped">
-            <thead>
-              <tr>
-                <th class="table-head">Date</th>
-                <th class="table-head">Latitude</th>
-                <th class="table-head">Longitude</th>
-                <th class="table-head">Depth</th>
-                <th class="table-head">Magnitude</th>
-                <th class="table-head">MagType</th>
-                <th class="table-head">NbStations</th>
-                <th class="table-head">Gap</th>
-                <th class="table-head">Distance</th>
-                <th class="table-head">RMS</th>
-                <th class="table-head">Source</th>
-                <th class="table-head">EventID</th>
-
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
+  <div class="collumn" style="padding-left: 2in; width: 12in;">
+    <div class="head"><span class="headline hl3">Earthquakes Past Pattern  </span>
+        <p><span class="headline hl4">1965-2016</span></p>
     </div>
-  </div>
+    <p>
+        <a><img
+                src="/static/Photos/actual.PNG" alt="Earthquake Data Visualizations" width="100%"
+                height="600"></a>
+
+         </p>
+</div>
+<div class="collumns">
+  <!-- obs 1 -->
+<div class="collumn" style=" width: 30%;">
+    <div class="head"><span class="headline hl1">Observations </span>
+        <p><span class="headline hl4">Earthquake Observations.</span></p>
+    </div>
+    <p>.
+        <a><img
+                src="/static/Photos/arima_1.PNG" 
+                alt="obv.1" width="100%" height="40%"></a> </p>
+         </div>
+<!-- obs2 -->
+         <div class="collumn" style="width: 30%;">
+          <div class="head"><span class="headline hl1">Observations </span>
+              <p><span class="headline hl4">Earthquake Observations.</span></p>
+          </div>
+          <p>.
+              <a><img src="/static/Photos/arima_2.PNG"
+                      alt="obv.1" width="100%" height="40%"></a> </p>
+               </div>
+               <!-- obs3 -->
+
+               <div class="collumn" style=" width: 30%;">
+                <div class="head"><span class="headline hl1">Observations </span>
+                    <p><span class="headline hl4">Earthquake Observations.</span></p>
+                </div>
+                <p>.
+                    <a><img src="/static/Photos/arima_11.PNG"
+                            alt="obv.1" width="100%" height="40%"></a> </p>
+                     </div>
+</div>   
+</div>
+</div>
   <footer class="footer">
     <span class="bottom">Earthquake Filter</span>
   </footer>
@@ -179,6 +155,9 @@
   }
 </script>
 
+<br>
+			<h3 class="text-center">Earthquakes</h3>
+			<br>
 <footer>
 		<div class="text-center copy-right-text" style=" text-emphasis-color: #39B7CD;">
 			© 2019 DataLake, Inc. All Rights Reserved. <a href="/">Privacy Policy</a>
