@@ -39,47 +39,82 @@
   </style>
 </head>
 <body>
-  <!-- Test -->
-  <nav class="navbar navbar-default" style="background-color:#1a1a1a;color:teal ;">
-    <div>
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-          data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
-          <span class="sr-only">Toggle navigation</span>
-        </button>
-        <a style="color:    white; font: 28px font-family='Allerta Stencil'; " class="navbar-brand"
-          href="/">Earthquakes</a>
-      </div>
-      <!-- Add a logo -->
-      <div class="topnav-centered">
-        <a class="Logo" href="/" class="active">
-          <img src="/static/Photos/Logo1.png" class="logo" width="100" height="50" alt="centered image"
-            style="class= active; align-content: center">
-        </a>
-        <!-- Test Nav Bar -->
-        <div style="color:    white; font: 28px font-family='Allerta Stencil'; " class="collapse navbar-collapse"
-          id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav background-color= #">
-            <li class="dropdown" style="color:    white; font: 20px 'Allerta Stencil', san-serif; ">
-              <!-- <a style="color:white; font: 28px font-family='Allerta Stencil'; " href="#" class="dropdown-toggle"
-                data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Earthquake News<span
-                  class="caret"></span></a>
-              <ul class="dropdown-menu"> -->
-                <!-- <li style="color:    white;"> <a href="{{ url_for('news1') }}">Earthquakes News in Americas</a></li>
-                <li> <a href="News2.html">Earthquakes News in Asia</a></li> -->
-              <!-- </ul> -->
-              <li><a style="color:    white; font: 26px font-family='Allerta Stencil'; "
-                href="{{url_for('news1')}}">Earthquake News</a></li>
-            <li><a style="color:    white; font: 26px font-family='Allerta Stencil'; "
-                href="{{url_for('maps1')}}">Earthquake Map</a></li>
-            <li><a style="color:    white; font: 26px font-family='Allerta Stencil'; "
-                href="{{url_for('aboutr')}}">Earthquake About</a></li>
-            <li><a style="color:    white; font: 26px font-family='Allerta Stencil'; "
-                href="{{url_for('data1')}}">Earthquake Data</a></li>
-            </li>
-          </ul>
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    
+    <!-- test -->
+    
+    <head>
+      <link
+        href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic'
+        rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="/static/css/style.css">
+      <title>Data Lake Final Project</title>
+      <meta name="viewport" content="width=device-width">
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    </head>
+    
+    <!-- test -->
+    
+    <head>
+      <meta charset="UTF-8">
+      <title>Earthquake Dashboard</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="{{ url_for('static',filename= './css/style.css') }}">
+    </head>
+    
+    <body>
+      <!-- Testing testing 123 -->
+      <div class="head">
+        <div class="headerobjectswrapper">
+          <div class="weatherforcastbox"><span style="font-style: italic;">Weatherforcast for the next 24 hours: Ice
+              Cold Winter</span><br><span>Wind: 17km/h SSE; Ther: 21°C; Hum: 15%</span></div>
+          <header>Earthquakes <br> Maps</header>
         </div>
+    
+        <div class="subhead">Arlington, VA - Wednesday November 20th, 2019 - Seven Pages
+          <nav style="padding-left: 6cm;">
+            <div>
+            </div>
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header" class="subhead" style="text-align: center; align-content: center;" >
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                  data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a style="color:	black; font: 28px ; " class="navbar-brand" href="/">Earthquakes</a>
+              </div>
+              
+              <div class="topnav-centered">
+    
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="align-items: center;">
+                  <ul class="nav navbar-nav background-color= #">
+                    <li class="dropdown" style="color:	white; font: 20px ; ">
+                    </li>
+                    <li> <a href="{{ url_for('news1') }}">Earthquake
+                         Visualizations</a></li>
+                    <li> <a href="{{ url_for('aboutr') }}">About</a>
+                    </li>
+                    <li><a href="{{ url_for('data1') }}">Earthquake
+                        Data</a></li>
+                    <li> <a href="{{ url_for('maps1') }}">Earthquake
+                        Map</a></li>
+    
+    
+                  </ul>
+                </div>
+              </div>
+          </nav>
+        </div>
+      </div>
+      <!-- End of testing nav bar -->
         <!-- End Test Nav Bar -->
       </div>
   </nav>
@@ -109,6 +144,9 @@
   <!-- Our JavaScript -->
   <script type="text/javascript" src="static/js/logic.js"></script>
 
+  <br>
+			<h3 class="text-center">Earthquakes</h3>
+			<br>
   <footer>
       <div class="text-center copy-right-text" style=" text-emphasis-color: #39B7CD;">
         © 2019 DataLake, Inc. All Rights Reserved. <a href="/">Privacy Policy</a>
