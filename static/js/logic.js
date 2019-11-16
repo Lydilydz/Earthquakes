@@ -1,14 +1,11 @@
 // Store our API endpoint inside queryUrl
 var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
+//Plates Layer
 var platesJSON = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_plates.json";
-//var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson"
-
-//var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson"
-
-//var query2 = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojson"
-var queryVolcanoUrl = "https://data.humdata.org/dataset/a60ac839-920d-435a-bf7d-25855602699d/resource/7234d067-2d74-449a-9c61-22ae6d98d928/download/volcano.json"
-
-var oilFieldsJSON = "https://raw.githubusercontent.com/carnegieendowment/oil-climate-index-2/master/app/assets/data/oilfields.geojson"
+//Anomaly Layer
+var anomalyUrl = "https://raw.githubusercontent.com/Lydilydz/megaproject_GOLD/master/Supplemental_Code/Output/earthquakes-dbscan-anomaly-processed_geoJSON_fmt.json"
+//Cluster Layer
+var clusterUrl = "https://raw.githubusercontent.com/Lydilydz/megaproject_GOLD/master/Supplemental_Code/Output/earthquakes-dbscan-cluster-processed_geoJSON_fmt.json"
 
 
 
@@ -16,10 +13,10 @@ var oilFieldsJSON = "https://raw.githubusercontent.com/carnegieendowment/oil-cli
 d3.json(queryUrl, function(data) {
   // Perform a GET request to the query URL
   d3.json(platesJSON, function(data2) {
-    // Perform a GET request to the query URL
-    d3.json(queryVolcanoUrl, function(data3) {
-      // Perform a GET request to the query URL
-      d3.json(oilFieldsJSON, function(data4) {
+    // Perform a GET request to the anomaly query URL
+    d3.json(anomalyUrl, function(data3) {
+      // Perform a GET request to the query cluster URL
+      d3.json(clusterUrl, function(data4) {
         // Perform a GET request to the query URL
         createFeatures(data.features, data2.features, data3.features, data4.features);
         })
@@ -28,7 +25,7 @@ d3.json(queryUrl, function(data) {
 });
 
 // // Perform a GET request to the query URL
-// d3.json(queryVolcanoUrl, function(data3) {
+// d3.json(queryanomalyUrl, function(data3) {
 //   // Perform a GET request to the query URL
 //   createFeatures(data.features, data2.features, data3.features);
 // });
@@ -45,7 +42,7 @@ d3.json(queryUrl, function(data) {
   }
 
 
-function createFeatures(earthquakeData, plateData, volcanoData, oilfieldData) {
+function createFeatures(earthquakeData, plateData, anomalyData, clusterData) {
 
   // Give each feature a popup describing the place and time of the earthquake
   function onEachFeature(feature, layer) {
@@ -81,8 +78,8 @@ function createFeatures(earthquakeData, plateData, volcanoData, oilfieldData) {
     
   });
 
-  var volcanos = L.geoJSON(volcanoData, {
-    onEachFeature: onEachFeatureV,
+  var anomalies = L.geoJSON(anomalyData, {
+    // onEachFeature: onEachFeatureV,
     pointToLayer: function (feature, latlng) {
         var geojsonMarkerOptions = {
         radius: 3,
@@ -97,7 +94,7 @@ function createFeatures(earthquakeData, plateData, volcanoData, oilfieldData) {
 
   });
 
-  // console.log(volcanos);
+  
 
   var plates = L.geoJson(plateData, {
     style: function(){
@@ -114,26 +111,31 @@ function createFeatures(earthquakeData, plateData, volcanoData, oilfieldData) {
 
   // console.log(plates);
 
-  var oilfields = L.geoJson(oilfieldData, {
-    style: function(){
-      return {
-          color:"blue",
-          fillColor: "white",
-          fillOpacity:0
-      }
-    }, 
-    onEachFeature: function (feature, layer) {
-      layer.bindPopup("<h3>" + feature.properties.Field_Name + "</h3>");
-    }
+  var clusters = L.geoJson(clusterData, {
+    pointToLayer: function (feature, latlng) {
+      var geojsonMarkerOptions = {
+      radius: 3,
+      fillColor: "yellow",
+      color: "blue",
+      weight: 1,
+      opacity: 1,
+      fillOpacity: 0.8
+    };
+    return L.circleMarker(latlng, geojsonMarkerOptions);
+  }
+    // , 
+    // onEachFeature: function (feature, layer) {
+    //   layer.bindPopup("<h3>" + feature.properties.Field_Name + "</h3>");
+    // }
   });
 
-
+  
   // Sending our earthquakes layer to the createMap function
-  createMap(earthquakes, plates, volcanos, oilfields);
+  createMap(earthquakes, plates, anomalies, clusters);
   
 }
 
-function createMap(earthquakes, plates, volcanos, oilfields) {
+function createMap(earthquakes, plates, anomalies, clusters) {
 
   // Define streetmap and darkmap layers
 //  var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +
@@ -178,8 +180,8 @@ var JusticeMap_income = L.tileLayer('http://www.justicemap.org/tile/{size}/incom
   var overlayMaps = {
     Earthquakes: earthquakes,
     Plates: plates,
-    Volcanos: volcanos,
-    Oil_Fields: oilfields,
+    Anomaly: anomalies,
+    Clusters: clusters,
 	"Income": JusticeMap_income
   };
 
@@ -203,7 +205,7 @@ var JusticeMap_income = L.tileLayer('http://www.justicemap.org/tile/{size}/incom
     },
 
     
-    layers: [streetmap, earthquakes, plates, volcanos, oilfields]
+    layers: [streetmap, earthquakes, plates, anomalies, clusters]
   });
 
 // Pass our map layers into our layer control
