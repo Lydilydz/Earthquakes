@@ -8,200 +8,209 @@
   <link
     href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic'
     rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="/static/css/style.css">
+  <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
   <title>Data Lake Final Project</title>
   <meta name="viewport" content="width=device-width">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+ <link rel="stylesheet" href="{{ url_for('static',filename= './css/style.css') }}">
 </head>
 
 <!-- test -->
 
-<head>
+<!-- <head>
   <meta charset="UTF-8">
   <title>Earthquake Dashboard</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="{{ url_for('static',filename= './css/style.css') }}">
-</head>
+ 
+ 
+</head> -->
 
 <body>
   <!-- Testing testing 123 -->
   <div class="head">
     <div class="headerobjectswrapper">
-      <div class="weatherforcastbox"><span style="font-style: italic;">Weatherforcast for the next 24 hours: Cold
-          Cold Winter</span><br><span>Wind: 7km/h SSE; Ther: 21°C; Hum: 82%</span></div>
-      <header>Data Lake <br>times </header>
+      <div class="weatherforcastbox"><span style="font-style: italic;">Weatherforcast for the next 24 hours: Ice
+          Cold Winter</span><br><span>Wind: 17km/h SSE; Ther: 21°C; Hum: 15%</span></div>
+      <header>Earthquakes <br>About </header>
     </div>
 
-    <div class="subhead">Arlington, VA - Thursday November 30, 2019 - Seven Pages
-      <nav>
+    <div class="subhead">Arlington, VA - Wednesday November 20th, 2019 - Seven Pages
+      <nav style="padding-left: 6cm;">
         <div>
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-              data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a style="color:	black; font: 28px ; " class="navbar-brand" href="/">Earthquakes</a>
+        </div>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header" class="subhead" style="text-align: center; align-content: center;">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a style="color:	black; font: 28px ; " class="navbar-brand" href="/">Earthquakes</a>
+        </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="align-items: center;">
+            <ul class="nav navbar-nav background-color= #">
+              <li class="dropdown" style="color:	white; font: 20px ; ">
+              </li>
+              <li> <a href="{{ url_for('news1') }}">Earthquake
+                  Visualizations</a></li>
+              <li> <a href="{{ url_for('aboutr') }}">About</a>
+              </li>
+              <li><a href="{{ url_for('data1') }}">Earthquake
+                  Data</a></li>
+              <li> <a href="{{ url_for('maps1') }}">Earthquake
+                  Map</a></li>
+
+
+            </ul>
           </div>
-          <!-- Add a logo -->
-          <!-- Trying to cneter logo not working -->
-          <div class="topnav-centered">
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav background-color= #">
-                <li class="dropdown" style="color:	white; font: 20px ; ">
-                </li>
-                <li> <a href="{{ url_for('news1') }}">Earthquake
-                    News</a></li>
-                <li> <a href="{{ url_for('aboutr') }}">About</a>
-                </li>
-                <li><a href="{{ url_for('data1') }}">Earthquake
-                    Data</a></li>
-                <li> <a href="{{ url_for('maps1') }}">Earthquake
-                    Map</a></li>
-
-
-              </ul>
-            </div>
-          </div>
+        </div>
       </nav>
     </div>
   </div>
   <!-- End of testing nav bar -->
-  
-  <body>
-    <!-- <nav class="navbar navbar-default" style="background-color:white; color:teal ;"> -->
-      <div>
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-          </button>
-          </div> <!-- Add a logo -->
-            <!-- Trying to cneter logo not working -->
-            <div class="topnav-centered">
-              
-            </div>
-    </nav>
-    <div class="row" style="color: black; text-align: justify; text-size-adjust: 19px; ">
-      <div class="col-sm-4" style="border-block-color: black;">
-        <div>
-          <h2 style="text-align: center; color: #FFC0CB">Mission</h2>
-        </div>
-        <!-- <div class="row"> -->
-        <div>
-          <p style="padding-left: 8mm; padding-right: 4mm;"> The purpose of this project was to analyze how
-            Earthquakes
-            affects us. To accomplish this analysis, we
-            first pulled data from numerous sources
-            such as the US Geological Survey, news sites around the world and a 44 year trove of earthquake
-            activity.
-          </p> <br>
-          <p style="padding-left: 8mm; padding-right: 4mm;"> After assembling the dataset, D3 and Leaflet was
-            used to
-            plot earthquakes worldwide with infrastructure
-            and hazardous correlation layers. This has the added
-            benefit of functionality to animate all fourty four years of timeline.
-            All fourty four years of worldwide earthquake data is searchable to vistors of the website.
-            Additionally, some of the most popular earthquake information is web scrapable upon demand by
-            user with the
-            click of a button.
-            Future interations of this website will include machine learning data which will try to predict
-            future
-            earthquakes based
-            upon previous earthquake data. </p>
-        </div>
-      </div>
-      <div class="col-sm-7" style="padding-left: 8mm; padding-right: 4mm;">
-        <h1 style="text-align: center">About</h1>
-        <!-- <div class="col-md-12"> -->
-        <h2 style="text-align: center; color: #FFC0CB">Meet the Team</h2>
-        <p style="align-items: center;">
-          <img src="/static/Photos/datalakepic.PNG" width="760" height="130" alt="logo"> </p>
-        <!-- </div class="col-md-12"> -->
 
-<!-- Meet the Team section  -->
-        <div class="row" style="align-items: center; padding-left: 1.5in; padding-top: 1in; ">
-          <!-- Mikes Card -->
-          <div class="column">
-            <div class="card">
-              <img src="/static/Photos/Mike_pp.PNG" alt="Mike" style="width:50%">
-              <div class="containerA">
-                <h2>Mike</h2>
-                <p class="title" style="color:#39B7CD;">Data Analysist</p>
-                
-                <p><button class="button">Contact</button></p>
-              </div>
-            </div>
-          </div>
-          <!-- Maria Card -->
-          <div class="column">
+  <body>
+    <div>
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+      </div>
+    </div>
+    </nav>
+    <div>
+      <!-- test -->
+      <div class="collumn" style="padding-left: 8mm; padding-right: 4mm; width: 5in;">
+        <div class="head"><span class="headline hl5">Earthquakes</span>
+          <p><span class="headline hl6">Our Mission</span></p>
+        </div>
+       
+        </p>
+        <p style="padding-left: 8mm; padding-right: 4mm;">The purpose of this project was to analyze how
+          Earthquakes
+          affects us. To accomplish this analysis, we
+          first pulled data from numerous sources
+          such as the US Geological Survey, news sites around the world and a 44 year trove of earthquake
+          activity.</p>
+
+        <p> After assembling the dataset, D3 and Leaflet was
+          used to
+          plot earthquakes worldwide with infrastructure
+          and hazardous correlation layers. This has the added
+          benefit of functionality to animate all fourty four years of timeline.
+          All fourty four years of worldwide earthquake data is searchable to vistors of the website.
+          Additionally, some of the most popular earthquake information is web scrapable upon demand by
+          user with the
+          click of a button.
+          Future interations of this website will include machine learning data which will try to predict
+          future
+          earthquakes based
+          upon previous earthquake data.</p>
+
+      </div>
+      <div class="collumn" style="width: 8in;">
+        <div class="head"><span class="headline hl1">Data Lake </span>
+          <p style="align-items: center;">
+            <img src="/static/Photos/datalakepic.PNG" width="760" height="130" alt="logo"> </p>
+          <p><span class="headline hl2">Meet The Team</span></p>
+          <!-- Meet the Team section  -->
+          <div class="row">
+            <!-- Mikes Card -->
+            <div class="column">
               <div class="card">
-                <img src="/static/Photos/Maria_pp.PNG" alt="Mike" style="width:50%">
+                <img class="media" src="/static/Photos/Mike_pp.PNG" alt="Mike">
                 <div class="containerA">
                   <h2>Mike</h2>
                   <p class="title" style="color:#39B7CD;">Data Analysist</p>
-                  
+
                   <p><button class="button">Contact</button></p>
                 </div>
               </div>
             </div>
-          <!-- Gene Card -->
-          <div class="column">
-            <div class="card">
-              <img src="/static/Photos/Gene.jpg" alt="Gene" style="width:50%;">
-              <div class="containerA">
-                <h2>Gene </h2>
-                <p class="title" style="color:#39B7CD;"> Data Analysist</p>
-                <!-- <p>Data Analyst</p> -->
-                <!-- <p>example@example.com</p> -->
-                <p><button class="button">Contact</button></p>
+            <!-- Maria Card -->
+            <div class="column">
+              <div class="card">
+                <img class="media" src="/static/Photos/Maria_pp.PNG" alt="Maria">
+                <div class="containerA">
+                  <h2>Maria</h2>
+                  <p class="title" style="color:#39B7CD;">Data Analysist</p>
+
+                  <p><button class="button">Contact</button></p>
+                </div>
+              </div>
+            </div>
+            <!-- Gene Card -->
+            <div class="column">
+              <div class="card">
+                <img class="media" src="/static/Photos/Gene_pp.png" alt="Gene" >
+                <div class="containerA">
+                  <h2>Gene </h2>
+                  <p class="title" style="color:#39B7CD;"> Data Analysist</p>
+                  <p><button class="button">Contact</button></p>
+                </div>
+              </div>
+            </div>
+            <!-- Lydia -->
+            <div class="column">
+              <div class="card">
+                <!-- test -->
+                <img class="media" src="/static/Photos/profilepic1-lydz.jpg"  alt="Lydia">
+								                 <!-- end -->                                
+                <div class="containerA">
+                  <h2>Lydi-Ly</h2>
+                  <p class="title" style="color:#39B7CD;">Data Analysist</p>
+                  <p><button class="button">Contact</button></p>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+        </p>
+      </div>
+      <div class="collumns">
+        <div class="collumn" style="width: 13in;">
+          <p> <span class="citation">"Don't under&shy;estimate the Force. "</span> </p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- test end -->
+         </body>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <br>
+			<h3 class="text-center">Earthquakes</h3>
+			<br>
+  </div>
 
-          <!-- Lydia -->
-          <div class="column">
-            <div class="card">
-              <img src="/static/Photos/profilepic1-lydz.jpg" alt="John" style="width:60%; height: 75%;"
-                style="align-content: center;">
-              <div class="containerA">
-                <h2>Lydi-Ly</h2>
-                <p class="title" style="color:#39B7CD;">Data Analysist</p>
-
-                <p><button class="button">Contact</button></p>
-              </div>
-  </body>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
   <!-- Footer test  -->
   <footer>
     <div class="text-center social-container">
       <a href="/">
-        <img alt="DataLake" class="datakind-logo company-name" src="/static/Logo1.png" class="logo" width="100"
+        <img  alt="DataLake" class="datakind-logo company-name" src="/static/Logo1.png" class="logo" width="100"
           height="50">
       </a>
       <ul class="social">
 
-        <a href="https://www.python.org/"><img src="/static/Photos/python.PNG" alt="Earthquake Data Visualizations"
+        <a href="https://www.python.org/"><img  src="/static/Photos/python.PNG" alt="Earthquake Data Visualizations"
             class="facebook-footer-icon" width="100" height="50"></a>
 
-        <a href="https://www.javascript.com/"><img src="/static/Photos/javascript.PNG" alt="JS"
+        <a href="https://www.javascript.com/"><img   src="/static/Photos/javascript.PNG" alt="JS"
             class="facebook-footer-icon" width="100" height="50"></a>
 
-        <a href="https://www.mongodb.com"><img src="/static/Photos/mongodb.PNG" alt="Mongo" class="facebook-footer-icon"
+        <a href="https://www.mongodb.com"><img  src="/static/Photos/mongodb.PNG" alt="Mongo" class="facebook-footer-icon"
             width="100" height="50"></a>
+
+            <a href="http://flask.palletsprojects.com/en/1.1.x/"><img  src="/static/flask.PNG" alt="Mongo" class="facebook-footer-icon"
+              width="100" height="50"></a>
       </ul>
     </div>
     <div class="text-center copy-right-text">

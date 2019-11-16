@@ -117,7 +117,7 @@ p{
 .collumn .headline.hl3{
     font-weight: 400;
     font-style: italic;
-    font-size: 36px;
+    font-size: 31px;
     box-sizing: border-box;
     padding: 10px 0 10px 0;
 }
@@ -147,7 +147,7 @@ p{
 
 .collumn .headline.hl5{
     font-weight: 400;
-    font-size: 28px;
+    font-size: 26px;
     text-transform: uppercase;
     font-style: italic;
     box-sizing: border-box;
@@ -303,7 +303,7 @@ p{
   
   /* End  */
     /* Container needed to position the overlay. Adjust the width as needed */
-  .containerA {
+  .containerB{
       position: relative;
       width: 50%;
     }
@@ -337,18 +337,17 @@ p{
     /* About page img */
     /* Three columns side by side */
   .column {
-    float: center;
-    width: 27%;
+    float: left;
+    width: 25%;
     margin-bottom: 16px;
     padding: 0 8px;
-    /* text-align: justify; */
-    margin: 0 auto;
+   
   }
   
   /* Display the columns below each other instead of side by side on small screens */
   @media screen and (max-width: 650px) {
     .column {
-      width: 10075%;
+      width: 100%;
       display: block;
     }
   }
@@ -359,7 +358,7 @@ p{
   }
   
   /* Some left and right padding inside the container */
-  .containerC {
+  .containerA {
     padding: 0 16px;
   }
   
