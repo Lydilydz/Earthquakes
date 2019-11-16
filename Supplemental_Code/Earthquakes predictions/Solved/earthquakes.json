@@ -1,0 +1,404 @@
+{
+  "paragraphs": [
+    {
+      "title": "",
+      "text": "%pyspark\n# Read in data from S3 Buckets\nfrom pyspark import SparkFiles\nurl \u003d\"https://s3.amazonaws.com/dataviz-curriculum/day_1/bigfoot.csv\"\nspark.sparkContext.addFile(url)\ndf \u003d spark.read.csv(SparkFiles.get(\"bigfoot.csv\"), header\u003dTrue, inferSchema\u003dTrue, timestampFormat\u003d\"yyyy/MM/dd HH:mm:ss\")\n\n# Show DataFrame\ndf.show()",
+      "user": "",
+      "dateUpdated": "2019-02-01 20:24:50.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+------+--------------------+--------------+--------------------+--------+---------+\n|number|               title|classification|           timestamp|latitude|longitude|\n+------+--------------------+--------------+--------------------+--------+---------+\n|   637|Report 637: Campe...|       Class A|2000-06-16T12:00:00Z|    61.5|   -142.9|\n|  2917|Report 2917: Fami...|       Class A|1995-05-15T12:00:00Z| 55.1872|-132.7982|\n|  7963|Report 7963: Sasq...|       Class A|2004-02-09T12:00:00Z| 55.2035|-132.8202|\n|  9317|Report 9317: Driv...|       Class A|2004-06-18T12:00:00Z| 62.9375|-141.5667|\n| 13038|Report 13038: Sno...|       Class A|2004-02-15T12:00:00Z| 61.0595|-149.7853|\n| 23666|Report 23666: Pas...|       Class A|2008-04-23T12:00:00Z|62.77335|-141.3165|\n| 26604|Report 26604: Day...|       Class A|2009-07-15T12:00:00Z|64.89139|-147.8142|\n|   179|Report 179: Man a...|       Class A|1981-09-15T12:00:00Z|32.31435|-85.16235|\n|   245|Report 245: Two o...|       Class A|1999-07-15T12:00:00Z|33.28375|-87.32655|\n|   416|Report 416: A res...|       Class A|1983-11-15T12:00:00Z|34.95605| -86.4559|\n|   435|Report 435: Dayli...|       Class A|2000-10-10T12:00:00Z| 34.5422|-86.66465|\n|   451|Report 451: Young...|       Class A|1993-08-20T12:00:00Z| 34.9263|-87.02025|\n|   577|Report 577: Man h...|       Class A|1999-11-15T12:00:00Z|34.80405|-87.50905|\n|   799|Report 799: Perso...|       Class A|1978-04-15T12:00:00Z|34.92855| -87.1105|\n|   832|Report 832: Witne...|       Class A|1980-11-15T12:00:00Z|33.13195|-88.17885|\n|   961|Report 961: Motor...|       Class A|1997-01-06T12:00:00Z| 31.4515|-88.08305|\n|  1022|Report 1022: Hunt...|       Class A|1990-09-15T12:00:00Z|33.97575|-87.45876|\n|  1907|Report 1907: Moto...|       Class A|1996-12-05T12:00:00Z|31.58255|-87.96095|\n|  3028|Report 3028: Dayl...|       Class A|2000-06-01T12:00:00Z| 34.4881| -86.6333|\n|  3296|Report 3296: Man ...|       Class A|2001-10-15T12:00:00Z| 34.6802|-87.00665|\n+------+--------------------+--------------+--------------------+--------+---------+\nonly showing top 20 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190201-202248_1625236994",
+      "dateCreated": "2019-02-01 20:22:48.000",
+      "dateStarted": "2019-02-01 20:24:20.595",
+      "dateFinished": "2019-02-01 20:24:50.449",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# Import date time functions\nfrom pyspark.sql.functions import month, year",
+      "user": "",
+      "dateUpdated": "2019-02-01 20:24:51.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190201-202248_298443690",
+      "dateCreated": "2019-02-01 20:22:48.000",
+      "dateStarted": "2019-02-01 20:24:50.457",
+      "dateFinished": "2019-02-01 20:24:51.279",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# Create a new DataFrame with the column Year\ndf.select(year(df[\"timestamp\"])).show()",
+      "user": "",
+      "dateUpdated": "2019-02-01 20:24:52.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+---------------+\n|year(timestamp)|\n+---------------+\n|           2000|\n|           1995|\n|           2004|\n|           2004|\n|           2004|\n|           2008|\n|           2009|\n|           1981|\n|           1999|\n|           1983|\n|           2000|\n|           1993|\n|           1999|\n|           1978|\n|           1980|\n|           1997|\n|           1990|\n|           1996|\n|           2000|\n|           2001|\n+---------------+\nonly showing top 20 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190201-202248_2100054933",
+      "dateCreated": "2019-02-01 20:22:48.000",
+      "dateStarted": "2019-02-01 20:24:51.280",
+      "dateFinished": "2019-02-01 20:24:52.691",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# Save the year as a new column\ndf \u003d df.withColumn(\"year\", year(df[\u0027timestamp\u0027]))\ndf.show()",
+      "user": "",
+      "dateUpdated": "2019-02-01 20:24:53.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+------+--------------------+--------------+--------------------+--------+---------+----+\n|number|               title|classification|           timestamp|latitude|longitude|year|\n+------+--------------------+--------------+--------------------+--------+---------+----+\n|   637|Report 637: Campe...|       Class A|2000-06-16T12:00:00Z|    61.5|   -142.9|2000|\n|  2917|Report 2917: Fami...|       Class A|1995-05-15T12:00:00Z| 55.1872|-132.7982|1995|\n|  7963|Report 7963: Sasq...|       Class A|2004-02-09T12:00:00Z| 55.2035|-132.8202|2004|\n|  9317|Report 9317: Driv...|       Class A|2004-06-18T12:00:00Z| 62.9375|-141.5667|2004|\n| 13038|Report 13038: Sno...|       Class A|2004-02-15T12:00:00Z| 61.0595|-149.7853|2004|\n| 23666|Report 23666: Pas...|       Class A|2008-04-23T12:00:00Z|62.77335|-141.3165|2008|\n| 26604|Report 26604: Day...|       Class A|2009-07-15T12:00:00Z|64.89139|-147.8142|2009|\n|   179|Report 179: Man a...|       Class A|1981-09-15T12:00:00Z|32.31435|-85.16235|1981|\n|   245|Report 245: Two o...|       Class A|1999-07-15T12:00:00Z|33.28375|-87.32655|1999|\n|   416|Report 416: A res...|       Class A|1983-11-15T12:00:00Z|34.95605| -86.4559|1983|\n|   435|Report 435: Dayli...|       Class A|2000-10-10T12:00:00Z| 34.5422|-86.66465|2000|\n|   451|Report 451: Young...|       Class A|1993-08-20T12:00:00Z| 34.9263|-87.02025|1993|\n|   577|Report 577: Man h...|       Class A|1999-11-15T12:00:00Z|34.80405|-87.50905|1999|\n|   799|Report 799: Perso...|       Class A|1978-04-15T12:00:00Z|34.92855| -87.1105|1978|\n|   832|Report 832: Witne...|       Class A|1980-11-15T12:00:00Z|33.13195|-88.17885|1980|\n|   961|Report 961: Motor...|       Class A|1997-01-06T12:00:00Z| 31.4515|-88.08305|1997|\n|  1022|Report 1022: Hunt...|       Class A|1990-09-15T12:00:00Z|33.97575|-87.45876|1990|\n|  1907|Report 1907: Moto...|       Class A|1996-12-05T12:00:00Z|31.58255|-87.96095|1996|\n|  3028|Report 3028: Dayl...|       Class A|2000-06-01T12:00:00Z| 34.4881| -86.6333|2000|\n|  3296|Report 3296: Man ...|       Class A|2001-10-15T12:00:00Z| 34.6802|-87.00665|2001|\n+------+--------------------+--------------+--------------------+--------+---------+----+\nonly showing top 20 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190201-202248_1334637513",
+      "dateCreated": "2019-02-01 20:22:48.000",
+      "dateStarted": "2019-02-01 20:24:52.695",
+      "dateFinished": "2019-02-01 20:24:53.849",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# Find the total bigfoot sightings per year\naverages \u003d df.groupBy(\"year\").count()\naverages.orderBy(\"year\").select(\"year\", \"count\").show()",
+      "user": "",
+      "dateUpdated": "2019-02-01 20:24:59.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+----+-----+\n|year|count|\n+----+-----+\n|null|    6|\n|1869|    1|\n|1921|    1|\n|1925|    1|\n|1930|    1|\n|1932|    1|\n|1934|    1|\n|1937|    1|\n|1938|    1|\n|1941|    1|\n|1942|    1|\n|1944|    2|\n|1947|    1|\n|1948|    1|\n|1949|    2|\n|1950|    3|\n|1952|    1|\n|1953|    2|\n|1954|    1|\n|1955|    3|\n+----+-----+\nonly showing top 20 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190201-202248_1450849036",
+      "dateCreated": "2019-02-01 20:22:48.000",
+      "dateStarted": "2019-02-01 20:24:53.851",
+      "dateFinished": "2019-02-01 20:24:59.759",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# Import the summarized data to a pandas DataFrame for plotting\n# Note: If your summarized data is still too big for your local memory then your notebook may crash\nimport pandas as pd\npandas_df \u003d averages.orderBy(\"year\").select(\"year\", \"count\").toPandas()\npandas_df.head()",
+      "user": "",
+      "dateUpdated": "2019-02-01 20:25:06.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "     year  count\n0     NaN      6\n1  1869.0      1\n2  1921.0      1\n3  1925.0      1\n4  1930.0      1",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190201-202248_141577946",
+      "dateCreated": "2019-02-01 20:22:48.000",
+      "dateStarted": "2019-02-01 20:24:59.762",
+      "dateFinished": "2019-02-01 20:25:06.508",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# Clean the data and rename the columns to \"year\" and \"sightings\"\npandas_df \u003d pandas_df.dropna()\npandas_df \u003d pandas_df.rename(columns\u003d{\"count\": \"sightings\"})\npandas_df.head()",
+      "user": "",
+      "dateUpdated": "2019-02-01 20:25:08.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "     year  sightings\n1  1869.0          1\n2  1921.0          1\n3  1925.0          1\n4  1930.0          1\n5  1932.0          1",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190201-202248_387964066",
+      "dateCreated": "2019-02-01 20:22:48.000",
+      "dateStarted": "2019-02-01 20:25:06.973",
+      "dateFinished": "2019-02-01 20:25:08.786",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# Plot the year and sightings\n%matplotlib inline\npandas_df.plot(\"year\", \"sightings\")",
+      "user": "",
+      "dateUpdated": "2019-02-01 20:25:09.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "\u003cmatplotlib.axes._subplots.AxesSubplot at 0x7f42032b8b50\u003e\n",
+            "type": "TEXT"
+          },
+          {
+            "data": "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\n\n",
+            "type": "IMG"
+          },
+          {
+            "data": "\u003cFigure size 432x288 with 1 Axes\u003e",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190201-202248_1067808563",
+      "dateCreated": "2019-02-01 20:22:48.000",
+      "dateStarted": "2019-02-01 20:25:08.788",
+      "dateFinished": "2019-02-01 20:25:09.895",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "",
+      "user": "",
+      "dateUpdated": "2019-02-01 20:23:37.000",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20190201-202337_104552761",
+      "dateCreated": "2019-02-01 20:23:37.000",
+      "dateStarted": "2019-02-01 20:26:05.000",
+      "dateFinished": "2019-02-01 20:26:05.000",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    }
+  ],
+  "name": "bigfoot",
+  "id": "2E57MFST4",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "looknfeel": "juno"
+  },
+  "info": {}
+}
