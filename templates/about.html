@@ -8,23 +8,16 @@
   <link
     href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic'
     rel='stylesheet' type='text/css'>
-  <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
+
   <title>Data Lake Final Project</title>
   <meta name="viewport" content="width=device-width">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- <link rel="stylesheet" href="{{ url_for('static',filename= './css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename= './css/style.css') }}">
 </head>
 
 <!-- test -->
-
-<!-- <head>
-  <meta charset="UTF-8">
-  <title>Earthquake Dashboard</title>
- 
- 
-</head> -->
 
 <body>
   <!-- Testing testing 123 -->
@@ -50,25 +43,25 @@
           <a style="color:	black; font: 28px ; " class="navbar-brand" href="/">Earthquakes</a>
         </div>
 
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="align-items: center;">
-            <ul class="nav navbar-nav background-color= #">
-              <li class="dropdown" style="color:	white; font: 20px ; ">
-              </li>
-              <li> <a href="{{ url_for('news1') }}">Earthquake
-                  Visualizations</a></li>
-              <li> <a href="{{ url_for('aboutr') }}">About</a>
-              </li>
-              <li><a href="{{ url_for('data1') }}">Earthquake
-                  Predictions</a></li>
-              <li> <a href="{{ url_for('maps1') }}">Earthquake
-                  Map</a></li>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="align-items: center;">
+          <ul class="nav navbar-nav background-color= #">
+            <li class="dropdown" style="color:	white; font: 20px ; ">
+            </li>
+            <li> <a href="{{ url_for('news1') }}">Earthquake
+                Visualizations</a></li>
+            <li> <a href="{{ url_for('aboutr') }}">About</a>
+            </li>
+            <li><a href="{{ url_for('data1') }}">Earthquake
+                Predictions</a></li>
+            <li> <a href="{{ url_for('maps1') }}">Earthquake
+                Map</a></li>
 
 
-            </ul>
-          </div>
+          </ul>
         </div>
-      </nav>
     </div>
+    </nav>
+  </div>
   </div>
   <!-- End of testing nav bar -->
 
@@ -89,7 +82,7 @@
         <div class="head"><span class="headline hl5">Earthquakes</span>
           <p><span class="headline hl6">Our Mission</span></p>
         </div>
-       
+
         </p>
         <p style="padding-left: 8mm; padding-right: 4mm;">The purpose of this project was to analyze how
           Earthquakes
@@ -147,7 +140,7 @@
             <!-- Gene Card -->
             <div class="column">
               <div class="card">
-                <img class="media" src="/static/Photos/Gene_pp.png" alt="Gene" >
+                <img class="media" src="/static/Photos/Gene_pp.png" alt="Gene">
                 <div class="containerA">
                   <h2>Gene </h2>
                   <p class="title" style="color:#39B7CD;"> Data Analysist</p>
@@ -159,8 +152,8 @@
             <div class="column">
               <div class="card">
                 <!-- test -->
-                <img class="media" src="/static/Photos/profilepic1-lydz.jpg"  alt="Lydia">
-								                 <!-- end -->                                
+                <img class="media" src="/static/Photos/profilepic1-lydz.jpg" alt="Lydia">
+                <!-- end -->
                 <div class="containerA">
                   <h2>Lydi-Ly</h2>
                   <p class="title" style="color:#39B7CD;">Data Analysist</p>
@@ -180,52 +173,54 @@
     </div>
     </div>
     <!-- test end -->
-         </body>
+  </body>
   </div>
   </div>
   </div>
   </div>
   </div>
   <br>
-			<h3 class="text-center">Earthquakes</h3>
-			<br>
+  <h3 class="text-center">Earthquakes</h3>
+  <br>
   </div>
 
   <!-- Footer test  -->
   <footer>
     <div class="text-center social-container">
       <a href="/">
-        <img  alt="DataLake" class="datakind-logo company-name" src="/static/Logo1.png" class="logo" width="100"
+        <img alt="DataLake" class="datakind-logo company-name" src="/static/Logo1.png" class="logo" width="100"
           height="50">
       </a>
       <ul class="social">
 
-        <a href="https://www.python.org/"><img  src="/static/Photos/python.PNG" alt="Earthquake Data Visualizations"
+        <a href="https://www.python.org/"><img src="/static/Photos/python.PNG" alt="Earthquake Data Visualizations"
             class="facebook-footer-icon" width="100" height="50"></a>
 
-        <a href="https://www.javascript.com/"><img   src="/static/Photos/javascript.PNG" alt="JS"
+        <a href="https://www.javascript.com/"><img src="/static/Photos/javascript.PNG" alt="JS"
             class="facebook-footer-icon" width="100" height="50"></a>
 
-        <!-- <a href="https://www.mongodb.com"><img  src="/static/Photos/mongodb.PNG" alt="Mongo" class="facebook-footer-icon"
-            width="100" height="50"></a> -->
+        <a
+          href="https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc"><img
+            src="/static/Photos/aws_logo.PNG" alt="AWS" class="facebook-footer-icon" width="100" height="50"></a>
 
-            <a href="https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc"><img  src="/static/Photos/aws_logo.PNG" alt="AWS" class="facebook-footer-icon"
-              width="100" height="50"></a>
+        <!-- new powered by logos -->
+        <a href="https://www.zepl.com/"><img src="/static/Photos/zepl_logo.PNG" alt="Zepl" class="facebook-footer-icon"
+            width="100" height="50"></a>
 
-              <!-- new powered by logos -->
-               <a href="https://www.zepl.com/"><img  src="/static/Photos/zepl_logo.PNG" alt="Zepl" class="facebook-footer-icon"width="100" height="50"></a> 
+        <a href="heroku.com"><img src="/static/Photos/heroku_logo.PNG" alt="Zepl" class="facebook-footer-icon"
+            width="100" height="50"></a>
 
-               <a href="heroku.com"><img  src="/static/Photos/heroku_logo.PNG" alt="Zepl" class="facebook-footer-icon"width="100" height="50"></a> 
+        <a
+          href="https://www.sas.com/en_us/whitepapers/machine-learning-primer-108796.html?utm_source=google&utm_medium=cpc&utm_campaign=ai-ml-us&utm_content=GMS-62586&keyword=machine+learning&matchtype=p&publisher=google&gclid=Cj0KCQiA2b7uBRDsARIsAEE9XpFV_5wUDs3RwTEugaOr0868JHBCfEIucDNlfrfApaF6Q4p7kRsTtdMaAqjKEALw_wcB"><img
+            src="/static/Photos/machine_learn.PNG" alt="Machine Learning" class="facebook-footer-icon" width="100"
+            height="50"></a>
 
-              <a href="https://www.sas.com/en_us/whitepapers/machine-learning-primer-108796.html?utm_source=google&utm_medium=cpc&utm_campaign=ai-ml-us&utm_content=GMS-62586&keyword=machine+learning&matchtype=p&publisher=google&gclid=Cj0KCQiA2b7uBRDsARIsAEE9XpFV_5wUDs3RwTEugaOr0868JHBCfEIucDNlfrfApaF6Q4p7kRsTtdMaAqjKEALw_wcB"><img  src="/static/Photos/machine_learn.PNG" alt="Machine Learning" class="facebook-footer-icon"
-                  width="100" height="50"></a>
 
-            
 
-              <!-- end powered by logos -->
+        <!-- end powered by logos -->
 
-            <a href="http://flask.palletsprojects.com/en/1.1.x/"><img  src="/static/flask.PNG" alt="Mongo" class="facebook-footer-icon"
-              width="100" height="50"></a>
+        <a href="http://flask.palletsprojects.com/en/1.1.x/"><img src="/static/flask.PNG" alt="Mongo"
+            class="facebook-footer-icon" width="100" height="50"></a>
       </ul>
     </div>
     <div class="text-center copy-right-text">

@@ -1,41 +1,20 @@
-
-
-
-<head>
-  <meta charset="UTF-8">
-  <title>Earthquake Dashboard</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!-- <link rel="stylesheet" href="static/css/style.css"> -->
-</head>
-
 <!DOCTYPE html>
 <html lang="en">
-
-
-<!-- test -->
 
 <head>
   <link
     href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic'
     rel='stylesheet' type='text/css'>
-  <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
-  <title>Data Lake Final Project</title>
-  <meta name="viewport" content="width=device-width">
 
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-
-</head>
-
-<!-- test -->
-
-<head>
-  <meta charset="UTF-8">
   <title>Earthquake Dashboard</title>
+  <meta name="viewport" content="width=device-width">
+  <meta charset="UTF-8">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="{{ url_for('static',filename= './css/style.css') }}">
 </head>
+
 
 <body>
   <!-- Testing testing 123 -->
@@ -50,118 +29,92 @@
       <nav style="padding-left: 6cm;">
         <div>
         </div>
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header" class="subhead" style="text-align: center; align-content: center;" >
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-              data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a style="color:	black; font: 28px ; " class="navbar-brand" href="/">Earthquakes</a>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header" class="subhead" style="text-align: center; align-content: center;">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a style="color:	black; font: 28px ; " class="navbar-brand" href="/">Earthquakes</a>
+        </div>
+
+        <div class="topnav-centered">
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="align-items: center;">
+            <ul class="nav navbar-nav background-color= #">
+              <li class="dropdown" style=" font: 20px ; ">
+              </li>
+              <li> <a href="{{ url_for('news1') }}">Earthquake
+                  Visualizations</a></li>
+              <li> <a href="{{ url_for('aboutr') }}">About</a>
+              </li>
+              <li><a href="{{ url_for('data1') }}">Earthquake
+                  Predictions</a></li>
+              <li> <a href="{{ url_for('maps1') }}">Earthquake
+                  Map</a></li>
+
+
+            </ul>
           </div>
-         
-          <div class="topnav-centered">
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="align-items: center;">
-              <ul class="nav navbar-nav background-color= #">
-                <li class="dropdown" style=" font: 20px ; ">
-                </li>
-                <li> <a href="{{ url_for('news1') }}">Earthquake
-                     Visualizations</a></li>
-                <li> <a href="{{ url_for('aboutr') }}">About</a>
-                </li>
-                <li><a href="{{ url_for('data1') }}">Earthquake
-                    Predictions</a></li>
-                <li> <a href="{{ url_for('maps1') }}">Earthquake
-                    Map</a></li>
-
-
-              </ul>
-            </div>
-          </div>
+        </div>
       </nav>
     </div>
   </div>
   <!-- End of testing nav bar -->
 
- 
-<body>       
-       <!-- Creates the Overall Grid -->
-  <div class="container">
-    <!-- <h1>Earthquake Data Predictions</h1> -->
-
-    <!-- Predictions test layout-->
-  </div>
-  <div class="collumn" style="padding-left: 2in; width: 12in;">
-    <div class="head"><span class="headline hl3">Earthquakes Past Pattern  </span>
+    <div class="container">
+    </div>
+    <div class="collumn" style="padding-left: 2in; width: 12in;">
+      <div class="head"><span class="headline hl3">Earthquakes Past Pattern </span>
         <p><span class="headline hl4">1965-2016</span></p>
-    </div>
-    <p>
-        <a><img
-                src="/static/Photos/actual.PNG" alt="Earthquake Data Visualizations" width="100%"
-                height="600"></a>
+      </div>
+      <p>
+        <a><img src="/static/Photos/actual.PNG" alt="Earthquake Data Visualizations" width="100%" height="600"></a>
 
-         </p>
-</div>
-<div class="collumns">
-  <!-- obs 1 -->
-<div class="collumn" style=" width: 30%;">
-    <div class="head"><span class="headline hl1">Observations </span>
-        <p><span class="headline hl4">Earthquake Observations.</span></p>
+      </p>
     </div>
-    <p>.
-        <a><img
-                src="/static/Photos/arima_1.PNG" 
-                alt="obv.1" width="100%" height="40%"></a> </p>
-         </div>
-<!-- obs2 -->
-         <div class="collumn" style="width: 30%;">
-          <div class="head"><span class="headline hl1">Observations </span>
-              <p><span class="headline hl4">Earthquake Observations.</span></p>
-          </div>
-          <p>.
-              <a><img src="/static/Photos/arima_2.PNG"
-                      alt="obv.1" width="100%" height="40%"></a> </p>
-               </div>
-               <!-- obs3 -->
+    <div class="collumns">
+      <!-- obs 1 -->
+      <div class="collumn" style=" width: 30%;">
+        <div class="head"><span class="headline hl1">Observations </span>
+          <p><span class="headline hl4">Earthquake Observations.</span></p>
+        </div>
+        <p>.
+          <a><img src="/static/Photos/arima_1.PNG" alt="obv.1" width="100%" height="40%"></a> </p>
+      </div>
+      <!-- obs2 -->
+      <div class="collumn" style="width: 30%;">
+        <div class="head"><span class="headline hl1">Observations </span>
+          <p><span class="headline hl4">Earthquake Observations.</span></p>
+        </div>
+        <p>.
+          <a><img src="/static/Photos/arima_2.PNG" alt="obv.1" width="100%" height="40%"></a> </p>
+      </div>
+      <!-- obs3 -->
 
-               <div class="collumn" style=" width: 30%;">
-                <div class="head"><span class="headline hl1">Observations </span>
-                    <p><span class="headline hl4">Earthquake Observations.</span></p>
-                </div>
-                <p>.
-                    <a><img src="/static/Photos/arima_11.PNG"
-                            alt="obv.1" width="100%" height="40%"></a> </p>
-                     </div>
-</div>   
-</div>
-</div>
-  <footer class="footer">
-    <span class="bottom">Earthquake Filter</span>
+      <div class="collumn" style=" width: 30%;">
+        <div class="head"><span class="headline hl1">Observations </span>
+          <p><span class="headline hl4">Earthquake Observations.</span></p>
+        </div>
+        <p>.
+          <a><img src="/static/Photos/arima_11.PNG" alt="obv.1" width="100%" height="40%"></a> </p>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+  </body>
+
+  <br>
+  <h3 class="text-center">Earthquakes</h3>
+  <br>
+  <footer>
+    <div class="text-center copy-right-text" style=" text-emphasis-color: #39B7CD;">
+      © 2019 DataLake, Inc. All Rights Reserved. <a href="/">Privacy Policy</a>
+    </div>
   </footer>
-  </div>
-
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="static/js/data.js"></script>
-<script src="static/js/app.js"></script>
-
-<script>
-  function resetForm() {
-    document.getElementById("myForm").reset();
-  }
-</script>
-
-<br>
-			<h3 class="text-center">Earthquakes</h3>
-			<br>
-<footer>
-		<div class="text-center copy-right-text" style=" text-emphasis-color: #39B7CD;">
-			© 2019 DataLake, Inc. All Rights Reserved. <a href="/">Privacy Policy</a>
-		  </div>
-		</footer>
 
 </html>

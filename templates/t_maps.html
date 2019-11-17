@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- test -->
+
+<head>
+    <link
+        href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic'
+        rel='stylesheet' type='text/css'>
+    <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
+    <title>Data Lake Final Project</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename= './css/style.css') }}">
+</head>
+
+<!-- test -->
+
+<!-- <head>
+  <meta charset="UTF-8">
+  <title>Earthquake Dashboard</title>
+ 
+ 
+</head> -->
+
+<body>
+    <!-- Testing testing 123 -->
+    <div class="head">
+        <div class="headerobjectswrapper">
+            <div class="weatherforcastbox"><span style="font-style: italic;">Weatherforcast for the next 24 hours: Ice
+                    Cold Winter</span><br><span>Wind: 17km/h SSE; Ther: 21°C; Hum: 15%</span></div>
+            <header>Earthquakes <br>About </header>
+        </div>
+
+        <div class="subhead">Arlington, VA - Wednesday November 20th, 2019 - Seven Pages
+            <nav style="padding-left: 6cm;">
+                <div>
+                </div>
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header" class="subhead" style="text-align: center; align-content: center;">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a style="color:	black; font: 28px ; " class="navbar-brand" href="/">Earthquakes</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="align-items: center;">
+                    <ul class="nav navbar-nav background-color= #">
+                        <li class="dropdown" style="color:	white; font: 20px ; ">
+                        </li>
+                        <li> <a href="{{ url_for('news1') }}">Earthquake
+                                Visualizations</a></li>
+                        <li> <a href="{{ url_for('aboutr') }}">About</a>
+                        </li>
+                        <li><a href="{{ url_for('data1') }}">Earthquake
+                                Predictions</a></li>
+                        <li> <a href="{{ url_for('maps1') }}">Earthquake
+                                Map</a></li>
+
+
+                    </ul>
+                </div>
+        </div>
+        </nav>
+    </div>
+    </div>
+    <!-- End of testing nav bar -->
+
+    <body>
+        <div>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+            </div>
+        </div>
+        </nav>
+        <div>
+            <!-- test -->
+            <div class="collumn" style="padding-left: 8mm; padding-right: 4mm; width: 5in;">
+                <div class="head"><span class="headline hl5">Earthquakes</span>
+                    <p><span class="headline hl6">Our Mission</span></p>
+                </div>
+
+                <!-- test -->
+                <div class="collumn" style="padding-left: 2mm; width: in;">
+                    <div class="head"><span class="headline hl5">Earthquakes</span>
+                        <p><span class="headline hl6">visualizations</span>
+                            <div class="row">
+                                <div class="col-md-12 col-md-12" style="padding-left: 2cm;">
+                                    <div class='tableauPlaceholder' id='viz1573695072886' style='position: relative'>
+                                        <noscript><a href='#'><img alt=' '
+                                                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ea&#47;Earthquakes_15729298219800&#47;NumberofQuakesandMagnitude&#47;1_rss.png'
+                                                    style='border: none' /></a></noscript><object class='tableauViz'
+                                            style='display:none;'>
+                                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                            <param name='embed_code_version' value='3' />
+                                            <param name='site_root' value='' />
+                                            <param name='name'
+                                                value='Earthquakes_15729298219800&#47;NumberofQuakesandMagnitude' />
+                                            <param name='tabs' value='yes' />
+                                            <param name='toolbar' value='yes' />
+                                            <param name='static_image'
+                                                value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ea&#47;Earthquakes_15729298219800&#47;NumberofQuakesandMagnitude&#47;1.png' />
+                                            <param name='animate_transition' value='yes' />
+                                            <param name='display_static_image' value='yes' />
+                                            <param name='display_spinner' value='yes' />
+                                            <param name='display_overlay' value='yes' />
+                                            <param name='display_count' value='yes' /></object></div>
+                                    <script
+                                        type='text/javascript'>                    var divElement = document.getElementById('viz1573695072886'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.minWidth = '900px'; vizElement.style.maxWidth = '100%'; vizElement.style.minHeight = '610px'; vizElement.style.maxHeight = (divElement.offsetWidth * 0.75) + 'px'; } else if (divElement.offsetWidth > 500) { vizElement.style.minWidth = '420px'; vizElement.style.maxWidth = '100%'; vizElement.style.minHeight = '610px'; vizElement.style.maxHeight = (divElement.offsetWidth * 0.75) + 'px'; } else { vizElement.style.width = '100%'; vizElement.style.minHeight = '1000px'; vizElement.style.maxHeight = (divElement.offsetWidth * 1.77) + 'px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                                </div>
+                        </p>
+                    </div>
+
+                    </p>
+                    <p style="padding-left: 8mm; padding-right: 4mm;">njnjnj blllaaaa</p>
+
+                    <p> put some text in here</p>
+
+                </div>
+
+            </div>
+            <div class="collumn" style="width: 8in;">
+                <div class="head"><span class="headline hl1">Data Lake </span>
+                    <p style="align-items: center;">
+                        <img src="/static/Photos/datalakepic.PNG" width="760" height="130" alt="logo"> </p>
+                    <p><span class="headline hl2">Meet The Team</span></p>
+<img src="/static/Photos/Capture_zepl.PNG">
+                </div>
+                </p>
+            </div>
+
+        </div>
+        </div>
+        <!-- test end -->
+    </body>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <br>
+    <h3 class="text-center">Earthquakes</h3>
+    <br>
+    </div>
+
+    <!-- Footer test  -->
+    <footer>
+
+
+        <a href="http://flask.palletsprojects.com/en/1.1.x/"><img src="/static/flask.PNG" alt="Mongo"
+                class="facebook-footer-icon" width="100" height="50"></a>
+        </ul>
+        </div>
+        <div class="text-center copy-right-text">
+            © 2019 DataLake, Inc. All Rights Reserved. <a href="/">Privacy Policy</a>
+        </div>
+    </footer>
+
+</body>
